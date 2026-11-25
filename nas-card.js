@@ -40,7 +40,7 @@ const NAS_I18N={
     "s_drive2": "Drive 2",
     "s_update": "Update",
     "s_actions": "Actions",
-    "h_image_url": "Empty = built-in DS720+ default image.",
+    "h_image_url": "Empty = built-in DS918+ default image.",
     "temperature": "Temperature",
     "lifetime": "Lifetime",
     "sectors": "Sectors",
@@ -96,7 +96,7 @@ const NAS_I18N={
     "s_drive2": "Laufwerk 2",
     "s_update": "Update",
     "s_actions": "Aktionen",
-    "h_image_url": "Leer = eingebettetes DS720+-Standardbild.",
+    "h_image_url": "Leer = eingebettetes DS918+-Standardbild.",
     "temperature": "Temperatur",
     "lifetime": "Lebensdauer",
     "sectors": "Sektoren",
@@ -118,7 +118,7 @@ const NAS_I18N={
 };
 const NASLang=(hass)=>String(hass?.locale?.language||hass?.language||globalThis.document?.querySelector?.("home-assistant")?.hass?.locale?.language||globalThis.document?.documentElement?.lang||globalThis.navigator?.language||"en").toLowerCase().startsWith("de")?"de":"en";
 const NAST=(hass)=>NAS_I18N[NASLang(hass)];
-const DEF={title:"DS720+",subtitle:"Synology NAS",show_image:true,image_mode:"background",layout:"auto",image_url:"",scale:1,confirm_actions:true,
+const DEF={title:"DS918+",subtitle:"Synology NAS",show_image:true,image_mode:"background",layout:"auto",image_url:"",scale:1,confirm_actions:true,
 temperature_entity:"sensor.diskstation_temperatur",cpu_entity:"sensor.diskstation_cpu_auslastung_gesamt",memory_entity:"sensor.diskstation_speichernutzung_real",security_entity:"binary_sensor.diskstation_sicherheitsstatus",
 inbound_entity:"sensor.diskstation_download_durchsatz",outbound_entity:"sensor.diskstation_upload_durchsatz",
 volume_title:"Volume 1",volume_percent_entity:"sensor.diskstation_volume_1_verwendetes_volumen",volume_used_entity:"sensor.diskstation_volume_1_belegter_speicherplatz",volume_status_entity:"sensor.diskstation_volume_1_status",
@@ -491,5 +491,5 @@ class NasCard extends HTMLElement{
 Object.freeze(NasCard.prototype);
 if(!customElements.get("nas-card"))customElements.define("nas-card",NasCard);
 window.customCards=window.customCards||[];
-if(!window.customCards.some(c=>c.type==="nas-card"))window.customCards.push({type:"nas-card",name:"NAS Card",description:NAST().description,preview:true,documentationURL:"https://github.com/BeGiBue/home-assistant-nas-card"});
+if(!window.customCards.some(c=>c.type==="nas-card"))window.customCards.push({type:"nas-card",name:"NAS Card",description:NAST().description,preview:true,documentationURL:"https://github.com/erj855/nas-card"});
 console.info(`NAS Card v${NAS_CARD_VERSION}`);
